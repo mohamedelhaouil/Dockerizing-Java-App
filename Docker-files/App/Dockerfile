@@ -2,6 +2,7 @@ FROM openjdk:11 AS BUILD_IMAGE
 LABEL "Description"="image to build the artifact"
 RUN apt update && apt install maven -y
 RUN git clone https://github.com/mohamedelhaouil/Dockerizing-Java-App.git
+#ADD ../.. Dockerizing-Java-App
 RUN cd Dockerizing-Java-App && mvn install
 
 FROM tomcat:9-jre11
